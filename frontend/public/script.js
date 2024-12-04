@@ -194,6 +194,7 @@ document.getElementById('budgetForm').addEventListener('submit', function (event
       document.getElementById('budgetForm').reset();
     })
     .catch(function (error) {
+      alert("Impossible de créer cette feuille. Veuillez choisir un autre nom.");
       console.error('Erreur lors de la création de la feuille de budget:', error);
     });
 });
