@@ -85,7 +85,6 @@ Pour redémarrer les services et reconstruire les images si nécessaire:
 ├── nginx/<br>
 │   └── default.conf<br>
 │<br>
-├── .env<br>
 ├── docker-compose.yml<br>
 └── README.md<br>
 
