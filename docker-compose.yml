@@ -42,9 +42,9 @@ services:
     depends_on:
       - db  # Attend que le service `db` soit prêt
     environment:
-      POSTGRES_USER: ${POSTGRES_USER}  # Utilisateur PostgreSQL, défini dans `.env`
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}  # Mot de passe PostgreSQL, défini dans `.env`
-      POSTGRES_DB: ${POSTGRES_DB}  # Nom de la base, défini dans `.env`
+      POSTGRES_USER: your_db_user
+      POSTGRES_PASSWORD: your_db_password
+      POSTGRES_DB: budget_db
     networks:
       - backend_network  # Connecte ce service au réseau partagé `backend_network`
 
@@ -53,9 +53,9 @@ services:
     container_name: bdd
     image: postgres:13  # Utilise l'image officielle PostgreSQL version 13
     environment:  
-      POSTGRES_USER: ${POSTGRES_USER}  # Utilisateur PostgreSQL, défini dans `.env`
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}  # Mot de passe PostgreSQL, défini dans `.env`
-      POSTGRES_DB: ${POSTGRES_DB}  # Nom de la base, défini dans `.env`
+      POSTGRES_USER: your_db_user
+      POSTGRES_PASSWORD: your_db_password
+      POSTGRES_DB: budget_db
     volumes:
       - db_data:/var/lib/postgresql/data  # Stocke les données dans un volume nommé
       - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql  # Exécute un script SQL à l'initialisation
@@ -85,8 +85,8 @@ services:
     build:
       context: ./auth  # Construit à partir du dossier `auth`
     environment:
-      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}  # ID client Google, défini dans `.env`
-      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}  # Secret client Google, défini dans `.env`
+      GOOGLE_CLIENT_ID: 209852898924-6ralj3obml7n9p6fffijidb792a7tv69.apps.googleusercontent.com
+      GOOGLE_CLIENT_SECRET: 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
     ports:
       - "3002:3002"  # Disponible sur localhost:3002
     depends_on:
