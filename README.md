@@ -38,6 +38,10 @@ Pour arrêter les services:
 Pour redémarrer les services et reconstruire les images si nécessaire:
 
     docker-compose up (--build)
+    
+Pour réinitialiser la base de données et les informations qu'elle contient:
+
+    remove budget-app-main_db_data
 
 <br><br>
 
