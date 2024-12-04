@@ -46,8 +46,8 @@ app.use(cors({
 
 // Configuration de Passport.js pour l'authentification Google OAuth
 passport.use(new GoogleStrategy({
-  clientID: process.env.GOOGLE_CLIENT_ID,
-  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  clientID: 209852898924-6ralj3obml7n9p6fffijidb792a7tv69.apps.googleusercontent.com,
+  clientSecret: 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,
   callbackURL: "http://localhost:3002/auth/google/callback"
 }, (token, tokenSecret, profile, done) => {
   // Fonction appelée après une authentification réussie
